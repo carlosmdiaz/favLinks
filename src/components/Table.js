@@ -1,4 +1,5 @@
 import React from 'react';
+import { render } from '@testing-library/react';
 
 const TableHeader = () => { 
     // boilerplate table header functional component
@@ -30,9 +31,14 @@ const TableBody = props => {
 }
 
 const Table = (props) => {
-//    const { linkData, removeLink } = props;
+    const { linkData, removeLink } = props;
     {/*TODO - return <table> component, TableHeader and TableBody  */}
-
+    return(
+        <table>
+            <TableHeader />
+            <TableBody linkData={linkData} removeLink={removeLink}/>
+        </table>
+    )
 }
 
 export default Table;
